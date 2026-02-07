@@ -1,0 +1,38 @@
+.carta {
+  position: relative;
+  width: 250px;
+}
+
+.carta:hover{
+  transform: scale(1.07);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.carta img{
+  width: 100%;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  height: 290px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.carta .delante{
+  transform: rotateY(90deg);
+  position: absolute;
+}
+
+.volteada .delante {
+  transform: rotateY(0deg);
+}
+
+.carta .detras {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+
+.volteada .detras{
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
