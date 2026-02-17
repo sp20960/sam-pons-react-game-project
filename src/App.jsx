@@ -16,6 +16,8 @@ function App() {
   const [showCards, setShowCards] = useState(false);
   const [imagenesCartas, setImagenesCartas] = useState([])
 
+  const cuponGanador = "34RFS";
+
   useEffect(() => {
     async function setCards (){
       const cards = await getCards();
@@ -48,6 +50,7 @@ function App() {
   const handleAnchorClick = () => {
     const modalWin = document.getElementById('modal-win');
     modalWin.style.display = "none";
+
   }
 
   useEffect(() => {
@@ -80,6 +83,7 @@ function App() {
       modalWin.style.opacity = "1"
       modalWin.style.display = "flex"
       modalWin.classList.add('animate__zoomIn');
+      localStorage.setItem("cupon", cuponGanador)
     }
   }, [cartas])
 
@@ -89,7 +93,7 @@ function App() {
       <section id="modal-win" className='animate__animated'>
         <div>
           <h1>¡Has ganado!</h1>
-          <p>Cúpon 5%: <span>34RFS</span></p>
+          <p>Cúpon 5%: <span>{cuponGanador}</span></p>
           <a onClick={() => handleAnchorClick} href="https://remotehost.es/student023/shop/">Volver a la tienda</a>
         </div>
       </section>

@@ -12,7 +12,7 @@ export default function Carta({carta, handleEleccion, volteada, deshabilitado}) 
     <div className="carta">
       <div className={volteada ? "volteada" : ""}>
         <img className="delante" src={carta.src}/>
-        <img className="detras" src="/public/cubierta.png"
+        <img className="detras" src="/src/assets/cubierta.png"
         onClick={handleClick}/>
       </div>
     </div>
